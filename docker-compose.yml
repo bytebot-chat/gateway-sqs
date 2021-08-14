@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  bytebot:
+    build: .
+    environment:
+      BYTEBOT_REDIS: "redis:6379"
+      BYTEBOT_ID: ${BYTEBOT_ID:-sns}
+      BYTEBOT_INBOUND: ${BYTEBOT_INBOUND:-sns-inbound}
+      BYTEBOT_OUTBOUND: ${BYTEBOT_OUTBOUND:-sns-outbound}
+  redis:
+    image: redis:6.2.3
+    ports:
+      - "127.0.0.1:6379:6379"
