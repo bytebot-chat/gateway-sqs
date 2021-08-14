@@ -2,6 +2,10 @@ github.com/aws/aws-sdk-go v1.40.22 h1:iit4tJ1hjL2GlNCrbE4aJza6jTmvEE2pDTnShct/yy
 github.com/aws/aws-sdk-go v1.40.22/go.mod h1:585smgzpB/KqRA+K3y/NL/oYRqQvpNJYvLm+LY1U59Q=
 github.com/bytebot-chat/sdk-go v0.0.1 h1:3pwJ4RVg9lyFXs9BeMB47Xi1wzFbmj1DIenJ8k1duZs=
 github.com/bytebot-chat/sdk-go v0.0.1/go.mod h1:aIuVH+aVjED+36K+0s4b68Efjk/XJCeFaCvbHPN0mpE=
+github.com/bytebot-chat/sdk-go v0.0.2 h1:nMsYj/GSWPfobIb9c9q95G+wkfryLhn2SOxXkUZGcVM=
+github.com/bytebot-chat/sdk-go v0.0.2/go.mod h1:aIuVH+aVjED+36K+0s4b68Efjk/XJCeFaCvbHPN0mpE=
+github.com/bytebot-chat/sdk-go v0.0.3 h1:fgc9pKgfYUd3iXLB+AS/CUXGQPVbRPjv0fEo0wHqGHo=
+github.com/bytebot-chat/sdk-go v0.0.3/go.mod h1:1H1CXSsW7oduBRXV7WYuIU2qHhADLPjcZnmmNVxX8GE=
 github.com/cespare/xxhash/v2 v2.1.1 h1:6MnRN8NT7+YBpUIWxHtefFZOKTAPgGjpQSxqLNn0+qY=
 github.com/cespare/xxhash/v2 v2.1.1/go.mod h1:VGX0DQ3Q6kWi7AoAeZDth3/j3BFtOZR5XLFGgcrjCOs=
 github.com/coreos/go-systemd/v22 v22.3.2/go.mod h1:Y58oyj3AT4RCenI/lSvhwexgC+NSVTIJ3seZv2GcEnc=
@@ -47,6 +51,8 @@ github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZN
 github.com/rs/xid v1.2.1/go.mod h1:+uKXf+4Djp6Md1KODXJxgGQPKngRmWyn10oCKFzNHOQ=
 github.com/rs/zerolog v1.23.0 h1:UskrK+saS9P9Y789yNNulYKdARjPZuS35B8gJF2x60g=
 github.com/rs/zerolog v1.23.0/go.mod h1:6c7hFfxPOy7TacJc4Fcdi24/J0NKYGzjG8FWRI916Qo=
+github.com/satori/go.uuid v1.2.0 h1:0uYX9dsZ2yD7q2RtLRtPSdGDWzjeM3TbMJP9utgA0ww=
+github.com/satori/go.uuid v1.2.0/go.mod h1:dA0hQrYB0VpLJoorglMZABFdXlWrHn1NEOzdhQKdks0=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
 github.com/stretchr/testify v1.5.1/go.mod h1:5W2xD1RspED5o8YsWQXVCued0rvSQ+mT+I5cxcmMvtA=
 github.com/yuin/goldmark v1.2.1/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=

@@ -1,8 +1,6 @@
 package main
 
 import (
-	"fmt"
-
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/sqs"
@@ -50,8 +48,8 @@ func subscribeSQS(svc *sqs.SQS, name *string) error {
 			log.Error().Err(err)
 		}
 
-		if len(msgResult.Messages) > 0 {
-			fmt.Println("Message Handle: " + *msgResult.Messages[0].ReceiptHandle)
+		for _, message := range msgResult.Messages {
+			handleInbound(message)
 			deleteMessage(svc, queueURL, msgResult.Messages[0].ReceiptHandle)
 		}
 	}

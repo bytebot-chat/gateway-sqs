@@ -1,7 +1,6 @@
 package main
 
 import (
-	"context"
 	"flag"
 	"fmt"
 	"os"
@@ -16,7 +15,6 @@ import (
 // Variables used for command line parameters
 var (
 	Token string
-	ctx   context.Context
 	rdb   *redis.Client
 
 	redisAddr = flag.String("redis", "localhost:6379", "Address and port of redis host")
