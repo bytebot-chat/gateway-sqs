@@ -20,8 +20,9 @@ var (
 	rdb   *redis.Client
 
 	redisAddr = flag.String("redis", "localhost:6379", "Address and port of redis host")
-	emailAddr = flag.String("e", "", "The email address of the user subscribing to the topic")
-	topicName = flag.String("t", "", "AWS SNS topic ARN to subscribe to")
+	queueName = flag.String("q", "", "AWS SQS queue name to subscribe to")
+	timeout   = flag.Int64("t", 5, "How long, in seconds, that the message is hidden from others")
+	region    = flag.String("region", "us-east-1", "AWS Region")
 	id        = flag.String("id", "sns", "ID to use when publishing messages")
 	inbound   = flag.String("inbound", "sns-inbound", "Pubsub queue to publish inbound messages to")
 	outbound  = flag.String("outbound", fmt.Sprintf(*id+"-outbound"), "Pubsub to subscribe to for sending outbound messages.")
@@ -41,6 +42,14 @@ func init() {
 func main() {
 	log.Info().
 		Str("Redis address", *redisAddr).
-		Msg("Bytebot SNS Gateway starting up!")
+		Msg("Bytebot SQS Gateway starting up!")
 
+	svc := NewSQSSession(*region)
+
+	err := subscribeSQS(svc, queueName)
+	if err != nil {
+		fmt.Println(err)
+		log.Error().Err(err)
+		os.Exit(1)
+	}
 }

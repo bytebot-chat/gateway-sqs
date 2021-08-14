@@ -1,4 +1,4 @@
-module github.com/bytebot-chat/gateway-sns
+module github.com/bytebot-chat/gateway-sqs
 
 go 1.14
 
