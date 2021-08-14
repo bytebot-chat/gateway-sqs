@@ -3,11 +3,13 @@ package main
 import (
 	"context"
 	"flag"
+	"fmt"
 	"os"
 
 	"github.com/bytebot-chat/sdk-go"
+
+	// TODO: Wrap these in the sdk-go library
 	"github.com/go-redis/redis/v8"
-	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
 )
 
@@ -22,15 +24,11 @@ var (
 	topicName = flag.String("t", "", "AWS SNS topic ARN to subscribe to")
 	id        = flag.String("id", "sns", "ID to use when publishing messages")
 	inbound   = flag.String("inbound", "sns-inbound", "Pubsub queue to publish inbound messages to")
-	outbound  = flag.String("outbound", *id+"-outbound", "Pubsub to subscribe to for sending outbound messages. Defaults to `${id}-outbound`")
+	outbound  = flag.String("outbound", fmt.Sprintf(*id+"-outbound"), "Pubsub to subscribe to for sending outbound messages.")
 )
 
 func init() {
 	var err error
-
-	zerolog.TimeFieldFormat = zerolog.TimeFormatUnix
-
-	flag.StringVar(&Token, "t", "", "Bot Token")
 	flag.Parse()
 
 	rdb, err = bytebot.Connect(*redisAddr)
@@ -44,4 +42,5 @@ func main() {
 	log.Info().
 		Str("Redis address", *redisAddr).
 		Msg("Bytebot SNS Gateway starting up!")
+
 }

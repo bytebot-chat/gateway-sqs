@@ -7,6 +7,8 @@ services:
       BYTEBOT_ID: ${BYTEBOT_ID:-sns}
       BYTEBOT_INBOUND: ${BYTEBOT_INBOUND:-sns-inbound}
       BYTEBOT_OUTBOUND: ${BYTEBOT_OUTBOUND:-sns-outbound}
+      BYTEBOT_EMAIL: ${BYTEBOT_EMAIL:-bytebot-sns-gw@localhost}
+      BYTEBOT_SNS_TOPIC: ${BYTEBOT_SNS_TOPIC:-arn:aws:sns::check:docker:compose.yaml}
   redis:
     image: redis:6.2.3
     ports:
